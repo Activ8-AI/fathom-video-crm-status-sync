@@ -23,7 +23,7 @@
 - 403 Forbidden – unauthorized access
 - 404 Not Found – no record for meeting_id
 
-#### b. POST /sync-status/update
+#### b. POST /sync-status
 **Purpose:**
 - Update the sync status, called by JobA/B/C
 
@@ -172,6 +172,4 @@ class SyncStatusTracker:
 - Metrics dashboards for sync health and SLAs
 
 ---
-
-**End of Document**
 
