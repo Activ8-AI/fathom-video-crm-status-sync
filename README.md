@@ -1,14 +1,7 @@
 ## Fathom Sync Status Indicators Backend Design
 
 ### 1. High-Level Architecture
-
-```
-Frontend --GET--> /sync-status?meeting_id=123
-          <-- 200 OK + status info
-
-Async Jobs (JobA -> JobB -> JobC) --POST--> /sync-status/update
-                                      <-- 200 OK
-```
+![Sync Status Sequence Diagram](./sync-status-sequence-diagram.png)
 
 ### 2. API Endpoints
 
