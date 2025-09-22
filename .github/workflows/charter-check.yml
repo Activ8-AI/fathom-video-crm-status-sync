@@ -1,0 +1,21 @@
+name: Charter Check
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  check-charter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify CHARTER.md exists and contains header
+        run: |
+          if [ ! -f CHARTER.md ]; then
+            echo "CHARTER.md is missing" >&2
+            exit 1
+          fi
+          if ! grep -q "^# Project Charter" CHARTER.md; then
+            echo "CHARTER.md missing required header '# Project Charter'" >&2
+            exit 1
+          fi
